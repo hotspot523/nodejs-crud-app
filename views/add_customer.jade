@@ -1,0 +1,45 @@
+//
+   Created by consultadd on 17/2/17.
+
+//
+   Created by consultadd on 10/2/17.
+
+extends layout
+
+
+block content
+    h1= title
+    form(name="add-estimation", method="post" action="http://127.0.0.1:3000/customers/save")
+
+        div.input
+            span.label FirstName
+            input(type="text", name="name" id="name")
+        div.input
+            span.label Lastname
+            input(type = "text" name="lname" id="lname")
+        div.input
+            span.label Mobile
+            input(type="integer" name="mobile" id="mobile")
+
+        div.actions
+            input(type="submit", value="add")
+
+    .page-header
+        h3 Customers DETAILS
+
+        table.table.table-striped.table-bordered.table-hover.table-condensed
+            thead
+                tr
+                    th Id
+                    th FirstName
+                    th LastName
+                    th Mobile
+
+            tbody
+                each user in data
+                    tr
+                        td #{user.customer_id}
+                        td #{user.first_name}
+                        td #{user.last_name}
+                        td #{user.mobile}
+

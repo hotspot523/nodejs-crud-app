@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    script.
+        var something = function () {
+            window.location.href = '/customers/add'
+        }
+
+    button(onclick='something()') Add Customer
